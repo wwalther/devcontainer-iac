@@ -72,8 +72,14 @@ jobs:
       - name: Read build args file
         id: read_buildargs_file
         run: |
-          LIST_CONTENT=$(cat Dockerfile.args |tr '\n' ',')
-          echo "BUILD_ARGS_LIST=[$LIST_CONTENT]" >> $GITHUB_OUTPUT
+          args=""
+          while IFS= read -r line; do
+            [[ -z "$line" || "$line" =~ ^# ]] && continue
+            args="${args}${line}"$'\n'
+          done < build-args.txt
+          echo "build_args<<EOF" >> $GITHUB_OUTPUT
+          echo "$args" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
@@ -87,9 +93,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          build-args: ${{ steps.read_buildargs_file.outputs.BUILD_ARGS_LIST }}
-
-
+          build-args: ${{ steps.read_buildargs_file.outputs.build_args }}
 
       # Sign the resulting Docker image digest except on PRs.
       # This will only write to the public Rekor transparency log when the Docker
