@@ -76,7 +76,7 @@ jobs:
           while IFS= read -r line; do
             [[ -z "$line" || "$line" =~ ^# ]] && continue
             args="${args}${line}"$'\n'
-          done < build-args.txt
+          done < Dockerfile.args
           echo "build_args<<EOF" >> $GITHUB_OUTPUT
           echo "$args" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
