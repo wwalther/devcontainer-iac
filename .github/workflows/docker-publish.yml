@@ -72,7 +72,7 @@ jobs:
       - name: Read build args file
         id: read_buildargs_file
         run: |
-          LIST_CONTENT=$(cat Dockerfile.args | tr '\n' ' ')
+          LIST_CONTENT=$(cat Dockerfile.args)
           echo "BUILD_ARGS_LIST=$LIST_CONTENT" >> $GITHUB_OUTPUT
 
       # Build and push Docker image with Buildx (don't push on PR)
