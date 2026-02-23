@@ -1,0 +1,15 @@
+{
+  "name": "My Dev Container",
+  "image": "devcontainer-iac:local",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "EditorConfig.EditorConfig",
+        "HashiCorp.HCL",
+        "opentofu.vscode-opentofu"
+      ]
+    }
+  },
+  "remoteUser": "vscode",
+  "postCreateCommand": "pre-commit"
+}
