@@ -48,6 +48,7 @@ RUN tdnf install -y \
         --gid=$USER_GID \
         --create-home \
         $USERNAME \
+    && mkdir /home/$USERNAME/.ssh \
     && chown -R $USERNAME:$USERNAME /home/$USERNAME \
     && tdnf autoremove -y \
         shadow-utils \
