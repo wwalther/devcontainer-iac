@@ -1,11 +1,11 @@
-ARG UV_VERSION
-ARG PRECOMMIT_VERSION
+ARG UV_VERSION=0.10.4
+ARG PRECOMMIT_VERSION=4.5.1
 
-ARG OPENTOFU_VERSION
-ARG TERRAGRUNT_VERSION
+ARG OPENTOFU_VERSION=1.11.5
+ARG TERRAGRUNT_VERSION=0.99.4
 
-ARG AWSCLI_VERSION
-ARG AZURECLI_VERSION
+ARG AWSCLI_VERSION=2.33.27
+ARG AZURECLI_VERSION=2.83.0
 ##############################################################################
 FROM ghcr.io/astral-sh/uv:${UV_VERSION} AS uv
 ##############################################################################
