@@ -25,6 +25,7 @@ RUN az config set core.collect_telemetry=no \
     git \
     groff \
     tar \
+    unzip \
     vi \
   && tdnf autoremove \
   && tdnf clean all
