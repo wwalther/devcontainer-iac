@@ -43,7 +43,8 @@ RUN apk add --no-cache \
   bash-completion \
   git \
   gpg \
-  gawk
+  gawk \
+  openssh
 
 # Suppress internal module noise
 ENV AZURE_CORE_COLLECT_TELEMETRY=0 \
