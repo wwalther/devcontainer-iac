@@ -21,12 +21,12 @@ ARG PRECOMMIT_VERSION
 
 RUN az config set core.collect_telemetry=no \
   && tdnf install -y \
-    gawk \
-    git \
-    groff \
-    tar \
-    unzip \
-    vi \
+  gawk \
+  git \
+  groff \
+  tar \
+  unzip \
+  vi \
   && tdnf autoremove \
   && tdnf clean all
 
@@ -41,20 +41,20 @@ ARG USERNAME=vscode
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 RUN tdnf install -y \
-        shadow-utils \
-    && groupadd \
-        --gid=$USER_GID \
-        $USERNAME \
-    && useradd \
-        --uid=$USER_UID \
-        --gid=$USER_GID \
-        --create-home \
-        $USERNAME \
-    && mkdir /home/$USERNAME/.ssh \
-    && chown -R $USERNAME:$USERNAME /home/$USERNAME \
-    && tdnf autoremove -y \
-        shadow-utils \
-    && tdnf clean all
+  shadow-utils \
+  && groupadd \
+  --gid=$USER_GID \
+  $USERNAME \
+  && useradd \
+  --uid=$USER_UID \
+  --gid=$USER_GID \
+  --create-home \
+  $USERNAME \
+  && mkdir /home/$USERNAME/.ssh \
+  && chown -R $USERNAME:$USERNAME /home/$USERNAME \
+  && tdnf autoremove -y \
+  shadow-utils \
+  && tdnf clean all
 
 USER vscode
 RUN echo 'eval "$(uv generate-shell-completion bash)"' >> ~/.bashrc \
