@@ -23,3 +23,4 @@ trustedRegistries:
   - gcr.io
   - ghcr.io
   - docker.io
+  - public.ecr.aws

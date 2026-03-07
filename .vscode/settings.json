@@ -10,7 +10,6 @@
   "hadolint.maxNumberOfProblems": 100,
   "hadolint.outputLevel": "warning",
   "files.associations": {
-    "Dockerfile*": "dockerfile",
-    "*.dockerfile": "dockerfile"
+    "Dockerfile": "dockerfile",
   }
 }
