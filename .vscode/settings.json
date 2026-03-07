@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "EditorConfig.EditorConfig",
+    "exiasr.hadolint"
+  ],
+  "hadolint.hadolintPath": "./tools/exiasr.hadolint.sh",
+  "hadolint.cliOptions": [
+    "--no-color"
+  ],
+  "hadolint.maxNumberOfProblems": 100,
+  "hadolint.outputLevel": "warning",
+  "files.associations": {
+    "Dockerfile*": "dockerfile",
+    "*.dockerfile": "dockerfile"
+  }
+}
