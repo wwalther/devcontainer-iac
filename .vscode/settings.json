@@ -11,5 +11,6 @@
   "hadolint.outputLevel": "warning",
   "files.associations": {
     "Dockerfile": "dockerfile",
+    "Dockerfile.args": "shellscript",
   }
 }

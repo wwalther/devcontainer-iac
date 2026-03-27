@@ -1,14 +1,14 @@
 # Alpine Dev Container for IaC projects
 ![Static Badge](https://img.shields.io/badge/python-3.11.15-orange) ![Static Badge](https://img.shields.io/badge/alpine-3.23-blue)
 
-![Static Badge](https://img.shields.io/badge/uv-0.10.4-blue)
+![Static Badge](https://img.shields.io/badge/uv-0.11.2-blue)
 ![Static Badge](https://img.shields.io/badge/pre--commit-4.5.1-blue)
 
 ![Static Badge](https://img.shields.io/badge/tofu-1.11.5-blue)
-![Static Badge](https://img.shields.io/badge/terragrunt-0.99.4-blue)
+![Static Badge](https://img.shields.io/badge/terragrunt-0.99.5-blue)
 
-![Static Badge](https://img.shields.io/badge/az-0.99.4-blue)
-![Static Badge](https://img.shields.io/badge/aws-2.34.4-blue)
+![Static Badge](https://img.shields.io/badge/az-2.84.0-blue)
+![Static Badge](https://img.shields.io/badge/aws-2.34.18-blue)
 
 ## Motivation
 The features for devcontainers where taking longer than I would like on startup, so this image was born.
